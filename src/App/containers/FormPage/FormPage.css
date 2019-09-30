@@ -1,0 +1,14 @@
+.modal-content {
+    padding: 20px;
+}
+.form-list {
+    max-width: 400px;
+}
+.form-list > div {
+    margin-bottom: 10px;
+}
+.form-list .btn {
+    float: right;
+    margin-left: 10px;
+    line-height: 1.2;
+}
