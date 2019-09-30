@@ -18,6 +18,7 @@ export default class CustomModal extends Component {
             activeItem: this.props.activeItem
         };
     }
+
     handleChange = e => {
         let { name, value } = e.target;
         if (e.target.type === "checkbox") {
@@ -26,6 +27,7 @@ export default class CustomModal extends Component {
         const activeItem = { ...this.state.activeItem, [name]: value };
         this.setState({ activeItem });
     };
+
     render() {
         const { toggle, onSave } = this.props;
         return (
@@ -60,16 +62,15 @@ export default class CustomModal extends Component {
                                     name="completed"
                                     checked={this.state.activeItem.completed}
                                     onChange={this.handleChange}
-                                />
-                                Completed
-                  </Label>
+                                />Completed
+                            </Label>
                         </FormGroup>
                     </Form>
                 </ModalBody>
                 <ModalFooter>
                     <Button color="success" onClick={() => onSave(this.state.activeItem)}>
                         Save
-              </Button>
+                    </Button>
                 </ModalFooter>
             </Modal>
         );
