@@ -6,7 +6,7 @@ export default function FormList(props) {
         <div className="form-list">
             {props.lists.map(list => (
                 <div key={list.id} className="clearfix">
-                    <span>Name: {list.title} - Age: {list.description}</span>
+                    <span>Name: {list.name} - Age: {list.age}</span>
                     <Button color="info" onClick={() => props.editFormData(list.id)}>
                         Edit
                     </Button>

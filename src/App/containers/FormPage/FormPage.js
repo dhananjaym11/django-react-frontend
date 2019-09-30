@@ -11,7 +11,7 @@ class FormPage extends Component {
     state = {
         lists: [],
         showModal: false,
-        editListData: { 'id': 0, 'title': '', 'description': '' }
+        editListData: { 'id': 0, 'name': '', 'age': 0 }
     }
 
     componentDidMount() {
@@ -41,8 +41,8 @@ class FormPage extends Component {
 
     addFormData = () => {
         const editListData = {
-            title: '',
-            description: ''
+            name: '',
+            age: 0
         }
         this.setState({
             editListData,
@@ -54,8 +54,8 @@ class FormPage extends Component {
         const editList = this.state.lists.find((list) => list.id === listId);
         const editListData = {
             id: editList.id,
-            title: editList.title,
-            description: editList.description
+            name: editList.name,
+            age: editList.age
         }
         this.setState({
             editListData,

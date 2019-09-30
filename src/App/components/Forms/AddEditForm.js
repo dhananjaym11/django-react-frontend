@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Row, Col, Button, Form, Label, Input, FormGroup, Modal } from 'reactstrap';
 
 export default function AddEditForm(props) {
-    const [title, updateName] = useState(props.data.title);
-    const [description, updateDescription] = useState(props.data.description);
+    const [name, updateName] = useState(props.data.name);
+    const [age, updateAge] = useState(props.data.age);
 
     useEffect(() => {
-        updateName(props.data.title);
-        updateDescription(props.data.description);
+        updateName(props.data.name);
+        updateAge(props.data.age);
     }, [props.data]);
 
     const onSaveClick = () => {
         const data = {
-            title, description
+            name, age
         }
         if (props.data.id) {
             data.id = props.data.id;
@@ -21,7 +21,7 @@ export default function AddEditForm(props) {
             props.postFormData(data);
         }
         updateName('');
-        updateDescription('');
+        updateAge('');
         props.toggleModal();
     }
 
@@ -31,23 +31,23 @@ export default function AddEditForm(props) {
                 <Row>
                     <Col xs="6">
                         <FormGroup>
-                            <Label for="title">title</Label>
+                            <Label for="name">name</Label>
                             <Input
-                                id="title"
+                                id="name"
                                 margin="normal"
-                                value={title}
+                                value={name}
                                 onChange={(e) => updateName(e.target.value)}
                             />
                         </FormGroup>
                     </Col>
                     <Col xs="6">
                         <FormGroup>
-                            <Label for="description">description</Label>
+                            <Label for="age">age</Label>
                             <Input
-                                id="description"
+                                id="age"
                                 margin="normal"
-                                value={description}
-                                onChange={(e) => updateDescription(e.target.value)}
+                                value={age}
+                                onChange={(e) => updateAge(e.target.value)}
                             />
                         </FormGroup>
                     </Col>
